@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.IO;
 
 namespace ContactManager
 {
-    class IContactReader
+    internal interface IContactReader
     {
+        IEnumerable<Contact> Read(Stream stream);
     }
 }
