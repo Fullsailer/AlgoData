@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ContactManager
 {
-    class IContactStore
+    public interface IContactStore
     {
+        Contact Add(Contact contact);
+        bool Remove(Contact contact, out Contact removed);
+
+        IEnumerable<Contact> Contacts { get; }
     }
 }

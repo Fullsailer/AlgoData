@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ContactManager.Filters
 {
-    class IContactFilter
+    public interface IContactFilter : IComparable<Contact>
     {
+        IEnumerable<Contact> Apply(IEnumerable<Contact> contacts);
     }
 }

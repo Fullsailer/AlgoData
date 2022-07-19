@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.IO;
 
 namespace ContactManager
 {
-    class IContactWriter
+    internal interface IContactWriter
     {
+        void Write(Stream stream, IEnumerable<Contact> contacts);
     }
 }

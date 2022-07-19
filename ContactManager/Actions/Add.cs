@@ -1,10 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ContactManager.Actions
 {
-    class Add
+    public class Add : Action
     {
+        public Add(IContactStore manager, Contact contact)
+            : base(manager, contact)
+        {
+        }
+
+        public override IEnumerable<Contact> Execute()
+        {
+            return new List<Contact>(1) { manager.Add(contact) };
+        }
     }
 }
